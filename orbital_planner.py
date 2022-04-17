@@ -17,7 +17,7 @@ def orbital_planner(nSats, rOrbit, nTimes, time):
    vOrbit = np.sqrt(mu/(rOrbit*1000.0))
    period = 2*np.pi*(rOrbit*1000.0)/vOrbit
    PercentOfOrbit = time/period
-   StartTheta = np.pi/2.0 # math.pi
+   StartTheta = np.pi / 2.0 * 1.01 # math.pi
    EndTheta = StartTheta + 2.0*np.pi * PercentOfOrbit
 
    # nSats = number of satellites 
@@ -45,10 +45,10 @@ def orbital_planner(nSats, rOrbit, nTimes, time):
 
       while i < l:
 
-        x[i] =  rOrbit*math.cos(t[i])
-	y[i] =  rOrbit*math.sin(t[i])
+         x[i] =  rOrbit*math.cos(t[i])
+         y[i] =  rOrbit*math.sin(t[i])
 
-	i += 1 
+         i += 1 
 
       mx[j] = x
       my[j] = y

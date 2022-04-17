@@ -10,7 +10,7 @@ import numpy as np
 
 # Satellite coordinates:
 
-def image_grid(x,y,z,n,m,alpha,r):
+def image_grid(x, y, z, n, m, alpha, r, shift):
 
  # Defining basic parameters: 
 
@@ -36,10 +36,10 @@ def image_grid(x,y,z,n,m,alpha,r):
  pixel_size_x = (2*i)/m # Pixel size in the horizontal direction 
  pixel_size_y = (2*i)/n # Pixel size in the vertical direction 
 
+ iShift = i * shift
+ 
  X = np.linspace(-i + pixel_size_x/2, i - pixel_size_x/2, num = m) # Vector of midpoints of each horizontal pixel 
- Y = np.linspace(-i + pixel_size_y/2, i - pixel_size_y/2, num = n) # Vector of midpoints of each vertical pixel 
-
-
+ Y = np.linspace(-i + pixel_size_y/2, i - pixel_size_y/2, num = n) + iShift # Vector of midpoints of each vertical pixel 
 
  # Defining the latitude vector: 
  

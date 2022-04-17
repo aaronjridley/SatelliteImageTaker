@@ -8,7 +8,7 @@
 from PIL import Image
 import numpy as np 
 from numpy import array
-from scipy.misc import toimage
+#from scipy.misc import toimage
 
 # Function from the internet.
 # Will be useful later.
@@ -126,6 +126,7 @@ def image_filter(x,y):
 
    ct1 += 1
 
- picture = toimage(filtered_image)
+ #picture = toimage(filtered_image)
+ picture = Image.fromarray(filtered_image.astype(np.uint8))
 
  return(picture)

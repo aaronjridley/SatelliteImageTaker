@@ -123,14 +123,8 @@ def image_rotation(x,y,X,Y,Z,r):
 
      theta = np.arccos(b[2]/r)
       
-     if theta <= 90:
+     result = 90 - (180*theta)/math.pi
 
-       result = 90 - (180*theta)/math.pi
-
-     elif theta > 90:
-
-       result = - (180*theta)/math.pi - 90
-     
      x_rotated = r*math.sin(theta)*math.cos(phi)
      y_rotated = r*math.sin(theta)*math.sin(phi)
      z_rotated = r*math.cos(theta)
